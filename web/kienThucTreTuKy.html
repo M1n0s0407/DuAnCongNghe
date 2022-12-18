@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vn">
+
+<head>
+    <title>
+        Website dành cho trẻ em mác chứng tự kỉ
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+        .bodySection{
+            width: 900px;
+            background-color: #fff;
+            height: 100vh;
+        }
+        body {
+            background-image: url('./resource/media/3685757.jpg');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+
+        .testimonials {
+            padding-top: 7rem;
+            padding-bottom: 7rem;
+        }
+
+        .testimonials .testimonial-item {
+            max-width: 18rem;
+        }
+
+        .testimonials .testimonial-item img {
+            max-width: 12rem;
+            box-shadow: 0px 5px 5px 0px #adb5bd;
+        }
+
+        .featuresContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 80%;
+            padding: 60px 0;
+            gap: 16px;
+        }
+
+        .featureDetail {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            min-height: 248px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        .active {
+            background-color: #4CAF50;
+        }
+
+        .contentContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .paginationContainer {
+            display: flex;
+            justify-content: center;
+            padding-top: 24px;
+            gap: 8px;
+        }
+
+        .contentImage:hover {
+            transform: scale(1.3);
+            transition: ease-in-out 500ms;
+        }
+
+        .contentImageContainer:hover div .contentImage {
+            transform: scale(1.3);
+            transition: ease-in-out 5000ms;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <b></b>
+    </div>
+    <div class="bodySection">
+        <div class="optionBar">
+            <ul>
+                <li><a href="./index.html">Trang chủ</a></li>
+                <li><a class="active" href="./kienThucTreTuKy.html">Kiến thức trẻ tự kỷ</a></li>
+                <li><a href="./chiaSe.html">Chia sẻ</a></li>
+                <li><a href="./game.html">Giải trí</a></li>
+                <li><a href="./CacCoSoCanThiep.html">Cơ sở can thiệp</a></li>
+            </ul>
+        </div>
+        <div  style="display: flex; flex-direction: column; padding: 8px;">
+            <div class="contentContainer">
+            </div>
+            <div class="paginationContainer"></div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        const dataList = [
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram-300x200.jpg",
+                title: "Mẹo dân gian chữa bệnh trầm cảm bằng cây thuốc Nam",
+                description: "Trầm cảm là một bệnh rối loạn tâm thần phức tạp, khó điều trị và sẽ gây ra nhiều hậu quả khó lường nếu không được điều trị đúng cách, kịp thời...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/tre-tu-ky-nen-uong-sua-khong-300x191.jpg",
+                title: "Trẻ tự kỷ nên uống sữa không, nên uống loại nao",
+                description: "Trẻ tự kỷ nên uống sữa không hay dùng loại sữa nào tốt là băn khoăn của rất nhiều bậc cha mẹ có con mắc hội chứng này...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/tri-lieu-ngon-ngu-cho-tre-tu-ky-3-300x200.jpg",
+                title: "Tìm hiểu phương pháp trị liệu ngôn ngữ cho trẻ tự kỷ",
+                description: "Mục đích chính khi áp dụng trị liệu ngôn ngữ cho trẻ tự kỷ là hỗ trợ khả năng giao tiếp, truyền đạt và tiếp nhận thông tin từ mọi người...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/cay-ghep-te-bao-goc-co-chua-duoc-tu-ky-3-300x160.jpg",
+                title: "Tìm hiểu phương pháp chữa tự kỷ bằng tế bào gốc",
+                description: "Những năm gần đây, tại Việt Nam, các chuyên gia đã bắt đầu áp dụng phương pháp chữa tự kỷ bằng tế bào gốc...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram-300x200.jpg",
+                title: "Mcây thuốc Nam",
+                description: "Trầm cảm là một bệnh rối loạn tâm thần phức tạp, khó điều trị và...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram-300x200.jpg",
+                title: "Mẹo dân gian chữa bệnh trầm cảm bằng cây thuốc Nam",
+                description: "Trầm cảm là một bệnh rối loạn tâm thần phức tạp, khó điều trị và...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram-300x200.jpg",
+                title: "Mẹo dân gian chữa bệnh trầm cảm bằng cây thuốc Nam",
+                description: "Trầm cảm là một bệnh rối loạn tâm thần phức tạp, khó điều trị và...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram-300x200.jpg",
+                title: "Mẹo dân gian chữa bệnh trầm cảm bằng cây thuốc Nam",
+                description: "Trầm cảm là một bệnh rối loạn tâm thần phức tạp, khó điều trị và...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram-300x200.jpg",
+                title: "Mẹo dân gian chữa bệnh trầm cảm bằng cây thuốc Nam",
+                description: "Trầm cảm là một bệnh rối loạn tâm thần phức tạp, khó điều trị và...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram-300x200.jpg",
+                title: "MẹNam",
+                description: "Trầm cảm là một bệnh rối loạn tâm thần phức tạp, khó điều trị và...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram-300x200.jpg",
+                title: "Mẹo dân gian chữa bệnh trầm cảm bằng cây thuốc Nam",
+                description: "Trầm cảm là một bệnh rối loạn tâm thần phức tạp, khó điều trị và...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram-300x200.jpg",
+                title: "Mẹo dân gian chữa bệnh trầm cảm bằng cây thuốc Nam",
+                description: "Trầm cảm là một bệnh rối loạn tâm thần phức tạp, khó điều trị và...",
+            },
+            {
+                imageSrc: "https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram-300x200.jpg",
+                title: "Mẹo dân gian chữa bệnh trầm cảm bằng cây thuốc Nam",
+                description: "Trầm cảm là một bệnh rối loạn tâm thần phức tạp, khó điều trị và...",
+            },
+        ]
+        const contentContainer = document.querySelector('.contentContainer');
+        const paginationContainer = document.querySelector('.paginationContainer');
+
+        const pageSize = 4; //How many items will be shown each page (higher -> more item -> lower total pages)
+        let currentPageNumber = 1;
+        const totalPages = parseInt(dataList.length % 4 == 0 ? dataList.length / 4 : dataList.length / 4 + 1); //Total number of pages
+        console.log(totalPages)
+        const renderContent = () => {
+            const dataToRender = paginate(dataList, pageSize, currentPageNumber).map(data => {
+                return `
+                    <div 
+                        class="contentImageContainer"
+                        style="display: flex; gap: 12px; padding: 6px; border: solid 1px lightgrey; border-radius: 8px; cursor: pointer"
+                        onclick="location.href='./meoDanGian_baiBaoDetailed.html' "
+                    >
+                        <div
+                            style="
+                                min-width: 210px;
+                                height: 140px;
+                                overflow: hidden;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                border-radius: 4px;
+                            "
+                        >
+                            <img class="contentImage" src="${data.imageSrc}" width="210px" height="140px" style="transition: ease-in-out 500ms;"/>
+                        </div>
+                        <div style="display: flex; gap: 8px; flex-direction: column; margin-top: 16px;">
+                            <div style="font-weight: bold">${data.title}</div>    
+                            <div>${data.description}</div>    
+                        </div>
+                    </div>
+                `
+            })
+
+            contentContainer.innerHTML = dataToRender.join('')
+        }
+
+        const changePage = (pageNumber) => {
+            currentPageNumber = pageNumber;
+            renderContent();
+            renderPagination();
+        }
+
+        const renderPagination = () => {
+            const paginationList = [];
+            for(let i = 1; i <= totalPages; i++) {
+                paginationList.push(`
+                    <div 
+                        onclick="changePage(${i})"
+                        style="
+                            border-radius: 4px;
+                            border: solid 1px gray;
+                            padding-left: 6px;
+                            padding-right: 6px;
+                            color: ${i === currentPageNumber ? "white" : "black"};
+                            background-color: ${i === currentPageNumber ? "grey" : "white"};
+                            cursor: pointer;
+                        "
+                    >
+                       ${i}     
+                    </div>
+                `)
+            }
+            paginationContainer.innerHTML = paginationList.join('')
+        }
+
+        renderPagination();
+
+        const paginate = (array, pageSize, pageNumber) => {
+            // human-readable page numbers usually start with 1, so we reduce 1 in the first argument
+            return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
+        }
+
+        renderContent();
+
+    </script>
+
+</body>

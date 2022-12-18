@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="vn">
+
+<head>
+    <title>Các cơ sở can thiệp</title>
+    <style>
+        body{
+            background-image: url('./resource/media/3685757.jpg');
+            font-family: Helvetica;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            margin: auto;
+            width: 900px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+            top: 0;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #searchInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            margin-left: auto;
+            margin-right: auto;
+
+            width: 50%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        .facilityContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- <div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6 p-0 order-sm-1 order-md-1 logo">
+                <img src="./Logo ĐH Công Nghệ-UET (1).png" alt="" style="width: 15%">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 p-0 order-sm-2 order-md-2 searchbar">
+                <div class="formContainer" style="display: flex; justify-content: space-around;">
+                    <input type="text" class="form-control" placeholder="Enter your email" style="padding: 0;">
+                    <button class="btn btn-primary text-nowrap">Sign Up!</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="container">
+        <ul>
+            <li><a href="./index.html">Trang chủ</a></li>
+            <li><a href="./kienThucTreTuKy.html">Kiến thức trẻ tự kỷ</a></li>
+            <li><a href="./chiaSe.html">Chia sẻ</a></li>
+            <li><a href="./game.html">Giải trí</a></li>
+            <li><a class="active" href="./CacCoSoCanThiep.html">Cơ sở can thiệp</a></li>
+        </ul>
+        <div
+            style="
+                width: 100%;
+                display: flex;
+                padding: 10px 20px 0 20px;
+                justify-content: flex-start;
+            "
+        >
+            <input 
+                type="text" 
+                id="searchInput" 
+                onkeyup="handleSearch()" 
+                placeholder="Search..." 
+                title="Type in a name"
+                style="
+                    width:  100%;
+                    border-radius: 8px;
+                "
+            >
+        </div>
+
+        <div>
+            <div style="
+                display: grid;
+                grid-template-columns: 60% 1fr;
+                gap: 8px;
+                margin-bottom: 8px;
+                padding: 8px;
+                border-top: solid 1px grey;
+                border-bottom: solid 1px grey;
+                background-color: rgb(241, 241, 241);
+            ">
+                <div style="font-size: 1.2rem; font-weight: bold;">Cơ sở can thiệp</div>    
+                <div style="font-size: 1.2rem; font-weight: bold;">Thành phố</div>    
+            </div>
+            <div class="facilityContainer">
+                
+            </div>
+        </div>
+
+        <script>
+            const facilityContainer = document.querySelector('.facilityContainer');
+            const searchInput = document.querySelector('#searchInput');
+            const facilityList = [
+                {
+                    name: "Trung tâm Sao Mai: Số 6 ngõ 9 Hoàng Đạo Thúy, phường Nhân Chính, Thanh Xuân",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm Phúc Tuệ: 67 Phó Đức Chính",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm Hy Vọng:ngõ 290 Kim Mã, Ba Đình, Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Phòng Khám Tâm thần – Tâm lý trẻ em: Số 2 ngõ 199 đường Trường Chinh – Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm (thuộc Công ty TNHH Vì tương lai Trẻ tự kỷ): Nhà số 2 ngách 10 ngõ 199 đường Thuỵ Khuê – Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm Phục hồi chức năng BV Nhi: BV Nhi Trung Ương – đường Đê La Thành – Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm Phục hồi chức năng BV Bạch Mai-BV Bạch Mai – đường Giải Phóng – Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm Nghiên cứu Tâm lý Trẻ em (N-T): Văn phòng 46 Trần Hưng Đạo – Hà Nội; Trung tâm 1: Khoa Nhi – BV Đống Đa – HN; Trung tâm 2: 17/663 Trương Định – Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm giáo dục Hoà Nhập trẻ em Hà Nội: 22, ngách 66/40, Yên Lạc, Vĩnh Tuy, Hai Bà Trưng, Hà Nội.",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Mầm Non đặc biệt Hoa Trung: Số nhà 18, Tập thể bộ Công an, Ngách 14, Ngõ 106 Hoàng Quốc Việt, Cầu Giấy",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trường ĐH Sư phạm I – Khoa giáo dục đặc biệt có mở trung tâm can thiệp cho trẻ khuyết tật.",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trường mầm non đặc biệt MYOKO: Số 3 Ngõ 61/26/1 Trần Duy Hưng Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trường chuyên biệt Albert Einstein",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm Hỗ trợ trẻ khuyết tật trí tuệ Hoa Anh Đào. Cơ sở 1: Ngách 161/42 Phố Hoa Lâm - Phường Việt Hưng - Quận Long Biên – Thành phố Hà Nội. Cơ sở 2: Số 2A - Ngách 161/22 Phố Hoa Lâm - Phường Việt Hưng - Quận Long Biên - Thành phố Hà Nội.",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Nhà cứu trợ Happyhose: số 18 ngõ 47 Nguyên Hồng, Đống Đa, Hà Nội.",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm Phương Thanh: số 42A, ngõ 51 Nguyễn Viết Xuân, P.Khương Mai, Q.Thanh Xuân, Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trường chuyên biệt Ánh Sao: Nhà 69, Ngõ 255, Phố Vọng, Phường Đồng Tâm, Quận Hai Bà Trưng- Hà Nội.",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trường chuyên biệt Nắng Mai: số 8,Xóm Gồm, Mỹ Đình, Hà Nội.",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm hỗ trợ giáo dục trẻ em Ngày Mới:số 14 ngõ 221 Tôn Đức Thắng, phường Hàng Bột, quận Đống Đa, thành phố Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trường mầm non Cầu Vồng Xanh: Số 1 , Cát Linh, Phường Cát Linh, Quận Đống Đa, Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "TTGDĐB trường Tiểu học Tô Hiến Thành số 39 ngõ 487 phố Kim Ngưu-phường Vĩnh Tuy- Hai Bà Trưng- Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm tư vấn và phát triển tâm lý việt. Địa chỉ: số 7 ngõ 123/5 Khương Thượng. Đống Đa. Hà Nội.",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm Phục hồi Chức năng Trẻ em Viethealth: 39A Xuân Diệu, Quận Tây Hồ, Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm hỗ trợ hòa nhập  ISTT: Cơ sở 1: Tầng 9 , tòa nhà số 7, ngõ 1160 đường Láng, Quận Đống Đa, Hà Nội. Cơ sở 2: Số 21, Lô M2, Khu đô thị mới Yên Hòa, Cầu Giấy, Hà Nội.",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm chuyên biệt Bình Minh: Số 26 - Ngõ 126 - Khuất Duy Tiến - Thanh Xuân - Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm giáo dục chuyê biệt Trí Đức: 200 ngõ 264, Ngọc Thụy, Long Biên, Hà Nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm Giáo dục Hòa nhập Trẻ em: số 1b, ngách 52/2, Yên Lạc, Phường Vĩnh Tuy, Hai Bà Trưng",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm giáo dục chuyên biệt An Phước : Khu đô thị đặng xá, gia lâm, hà nội",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm hỗ trợ hòa nhập Hand in Hand (thuộc Hội khuyến học Việt Nam, nằm trong khuôn viên của Liên đoàn bóng đá Việt Nam)",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm nghiên cứu tâm lý - giáo dục và hỗ trợ hòa nhập Eric: Ga Cổ Loa - đường Dục nội- Việt Hùng- Đông Anh-Hà Nội.",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm Tia Nắng Nhỏ: Số 15 Nguyễn Hoàng, Mỹ Đình 2, Nam Từ Liêm",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "TT trợ giúp Gia đình và trẻ KTTT Hà Nội :Số 13 phố Vân Hồ 3, Quận Hai Bà Trưng",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trường Totochan: Số 67 Nguyễn Viết Xuân - Khương Mai",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung tâm SFORA: 107 Giảng Võ, Hà Nội (tầng 2 Navy Coffee)",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Trung Tâm trợ giúp Gia đình và trẻ Khuyết tật trí tuệ",
+                    city: "Hà Nội",
+                },
+                {
+                    name: "Bệnh viện Nhi đồng 1 - Phòng khám Vật lý trị liệu và phục hồi chức năng: điều trị ngoại trú vật lý trị liệu, xưởng chỉnh hình cụ, điều trị trẻ nói ngọng, lượng giá và điều trị phục hồi trẻ bại não, chăm sóc và điều trị ban ngày các trẻ khuyết tật.",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Phòng khám Tâm lý trẻ em và vị thành niên: Khám và tư vấn các vấn đề về tâm lý cho trẻ em và vị thành niên. Địa chỉ: 341 Sư Vạn Hạnh – P.10 – Q.10",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Bệnh viện Nhi đồng II – khoa Tâm lý: 14 Lý Tự Trọng, Q1",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Phòng khám Tâm lý Bà mẹ và Trẻ em: Bệnh viện Đại học Y dược, cơ sở 3: 221B Hoàng Văn Thụ – Q. Phú Nhuận",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trung tâm hỗ trợ phát triển giáo dục hoà nhập cho nguời khuyết tật: (108 Lý Chính Thắng – P8, Q3)",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường chuyên biệt Q10 (trường công lập trực thuộc Phòng GD ĐT): 322/3 Điên Biên Phủ P11, Q10",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường dạy trẻ chậm phát triển trí tuệ, tự kỷ.: 153 XVNT, P.17, Q. Bính Thạnh",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường chuyên biệt tư thục Ước Mơ: 284/4/10 Lý Thường Kiệt P.14, Q.10 ",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường Mầm non Tuổi Ngọc:366/6 Bùi Minh Trực, P.6, Q.8, TP. HCM",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường mẫu giáo chuyên biệt Sương Mai: Nam Kỳ Khởi Nghĩa",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường chuyên biệt Gia Định: 280 Bùi Hữu Nghĩa phường 2 Quận Bình Thạnh",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường Giáo dục trẻ tự kỷ & chậm phát triễn POOH PI,: 22 lô C Trường Sơn P 15 , Q 10",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Phòng khám đa khoa Tân Định: 146bis Võ Thị Sáu P8 Q3 ( gần ngã ba Phạm Ngọc Thạch – Võ Thị Sáu ).",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Câu Lạc Bộ Trăng Non (Chi Hội Trị Liệu Tâm Lý Trăng Non ): số 29 Phan Xích Long, Phường 3, Quận Phú Nhuận",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường tiểu học chuyên biệt Anh Vương: 260/44A Nguyễn Thái Bình, P.12, Q.Tân Bình",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường chuyên biệt Ban Mai do nhóm chuyên gia Việt kiều bên Mỹ hỗ trợ",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "PK Tâm Gia An: 122B, Đường Trần Đình Xu , Quận 1, Hồ Chí Minh",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường chuyên biệt từng bước nhỏ (Little Steps. Cơ sở chính: 82/9D Bình Quới P.27 Q.Bình Thạnh, TP HCM. Chi nhánh Q.4 : Phòng trị liệu ngôn ngữ trẻ em (MN Ngôi Nhà Ong). Tầng lửng M Lô B Cao ốc Vạn Đô 348 Bến Vân Đồn P.1 Q.4 và Chi nhánh Q.Tân Phú : Phòng trị liệu ngôn ngữ trẻ em, địa chỉ: 62/37 Phú Thọ Hòa Q.Tân Phú",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường chuyên biệt Ban Mai",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trường chuyên biệt Tuổi Ngọc,  Quận Bình Thạnh",
+                    city: "Hồ Chí Minh",
+                },
+                {
+                    name: "Trung tâm hỗ trợ phát triển giáo dục hòa nhập Hoa Hướng Dương:  đường Nguyễn Du, Phường Hoàng Văn Thụ",
+                    city: "Bắc Giang",
+                },
+                {
+                    name: "Mầm non chuyên biệt Happy House",
+                    city: "Bắc Giang",
+                },
+                {
+                    name: "Phòng khám nhi và trung tâm chăm sóc sức khỏe chuyên biệt: Đông phát - Đông Vệ",
+                    city: "Thanh Hóa",
+                },
+                {
+                    name: "Trường mầm non khuyết tật Hy Vọng: 280 Lương Thế Vinh, phường Hải Tân",
+                    city: "Hải Dương",
+                },
+                {
+                    name: "Trường mầm non chuyên biệt SUN RISE-Phường Đông Vệ - TP Thanh Hóa - Thanh Hóa ( GẦN CHỢ NAM THÀNH ).",
+                    city: "Thanh Hóa",
+                },
+                {
+                    name: "Trung tâm giáo dục đặc biệt Bình Minh: số 565 - tổ 11- khu 5 - phường Hà Tu - Quảng Ninh",
+                    city: "Hạ Long",
+                },
+                {
+                    name: "Trường chuyên biệt tư thục Thanh Tâm, Đà Nẵng :157B Phan Tứ, Bắc Mỹ An, quận Ngũ Hành Sơn",
+                    city: "Đà Nẵng",
+                },
+                {
+                    name: "Trung tâm chuyên biệt Ánh Dương : 235 Đường Nguyễn Viết Xuân - Tỉnh Hà Nam",
+                    city: "Phủ Lý",
+                },
+                {
+                    name: "Trung tâm hỗ trợ phát triển giáo dục hòa nhập - tỉnh Bắc Ninh",
+                    city: "Bắc Ninh",
+                },
+                {
+                    name: "Trung tâm hỗ trợ phát triển giáo dục hòa nhập Từ Sơn: phường Đình Bảng, thị xã Từ Sơn",
+                    city: "Bắc Ninh",
+                },
+                {
+                    name: "Trung tâm hỗ trợ phát triển giáo dục hòa nhập Hi Vọng :Số nhà 2668, tổ 18b, khu 4, Phường Vân Phú, tỉnh Phú Thọ",
+                    city: "Việt Trì",
+                },
+                {
+                    name: "Trường mầm non Sunflower: Số 140, đường Lê Lai, phường Hoàng Văn Thụ",
+                    city: "Bắc Giang",
+                },
+                {
+                    name: "Lớp tiểu học chuyên biệt Ánh Dương: 43 đường Phan Trung – phường Phú Thủy – Tỉnh Bình Thuận",
+                    city: "Phan Thiết",
+                },
+                {
+                    name: "Trung tâm Tịnh Trúc Gia: Ngõ 184 Điện Biên Phủ ,Tổ 21, Phường Thủy Xuân",
+                    city: "Huế",
+                },
+                {
+                    name: "Trường chuyên biệt Hồng Phúc: 1A56 Tỉnh Lộ 10, xã Phạm Văn Hai, huyện Bình Chánh",
+                    city: "Thừa Thiên Huế",
+                },
+                {
+                    name: "Trung tâm Hướng Dương:52, đường Phạm Văn Nghị",
+                    city: "Đà Nẵng",
+                },
+                {
+                    name: "Trung tâm Hỗ trợ phát triển giáo dục hòa nhập Trẻ khuyết tật Đắc Lắc",
+                    city: "Buôn Ma Thuột",
+                },
+                {
+                    name: "Trường chuyên biệt Hoa Phong Lan: Số 1 Lữ Gia, Phường 9, Tỉnh Lâm Đồng",
+                    city: "Đà Lạt",
+                },
+                {
+                    name: "Trung tâm Từng Bước Nhỏ: Số nhà 18, ngõ 254, Văn Cao, Đằng Giang, Ngô Quyền",
+                    city: "Hải Phòng",
+                },
+                {
+                    name: "Trung tâm trợ giúp phát triển hòa nhập Sao Mai: Đội 8 – thôn 4 – xã Đại Hưng – huyện Khoái Châu",
+                    city: "Hưng Yên",
+                },
+                {
+                    name: "Trung tâm Nắng Mai: Số nhà 15, ngách 5/2 phố Lý Quốc Bảo, tỉnh Hải Dương",
+                    city: "Hải Dương",
+                },
+                {
+                    name: "Trường nuôi dạy Trẻ em khuyết tật:  Hẻm 9/1, đường Nguyễn Thông, Phường 3, Tỉnh Long An",
+                    city: "Tân An",
+                },
+                {
+                    name: "Công ty TNHH MTV Hỗ trợ giáo dục Thiên thần nhỏ Ninh Bình:  Số nhà 21, đường Chiến Thắng, phố 7, phường Đông Thành",
+                    city: "Ninh Bình",
+                },
+                {
+                    name: "Lớp chuyên biệt Hướng Dương Xanh: 18 Nguyễn Dụng, T. Quảng Bình.",
+                    city: "Đồng Hới",
+                },
+                {
+                    name: "Lớp mầm non tư thục chuyên biệt Vì ngày mai: Số 1 phố Hải An phường Hồng Hải tỉnh Quảng Ninh.",
+                    city: "Hạ Long",
+                },
+                {
+                    name: "Cơ sở Mầm non tư thục Ánh Sao: Số nhà 11- Đường 279 – Tổ 2 – Khu 3b – Giếng Đáy- Quảng Ninh.",
+                    city: "Hạ Long",
+                },
+                {
+                    name: "Mầm non Hoa Thuỷ Tiên: 18 Trương Định - Tỉnh Quảng Trị.",
+                    city: "Đông Hà",
+                },
+                {
+                    name: "Hiệp hội Gia đình người tự kỷ:  Bệnh viện Nhi Nghệ An",
+                    city: "Vinh",
+                },
+                {
+                    name: "Trung tâm hỗ trợ phát triển giáo dục hòa nhập trẻ khuyết tật Vĩnh Long: 16 Nguyễn Thái Học, phường 1",
+                    city: "Vĩnh Long",
+                },
+                {
+                    name: "Cơ sở Can thiệp sớm Khai Trí – Vĩnh Phúc:  Số 53 đường Tôn Thất Tùng, Phường Liên Bảo, Vĩnh Yên",
+                    city: "Vĩnh Phúc",
+                },
+                {
+                    name: "Trường mầm non hòa nhập Tuổi Thơ: số 11 phố Văn Cao, quận Ngô Quyền",
+                    city: "Hải Phòng",
+                },
+                
+            ].sort((a, b) => a.name.localeCompare(b.name)); //Sort
+
+
+            const renderFacility = (facilities) => {
+                const dataToRender = facilities.map(facility => {
+                    return `
+                        <div style="
+                            display: grid;
+                            grid-template-columns: 60% 1fr;
+                            gap: 16px;
+                            border-bottom: 1px solid grey;
+                            padding: 0 20px 8px 8px;
+                            align-items: center;
+                        ">
+                            <div style="font-size: 1.2rem">${facility.name}</div>    
+                            <div style="font-size: 1.2rem">${facility.city}</div>    
+                        </div>
+                    `
+                })
+
+                facilityContainer.innerHTML = dataToRender.join('');
+            }
+
+            renderFacility(facilityList);
+
+            const handleSearch = () => {
+                if(!searchInput.value) {
+                    renderFacility(facilityList);
+                    return
+                }
+                let resultArray = facilityList.filter(facility => {
+                    return searchInput.value.toLowerCase() === facility.city.toLowerCase();
+                });
+
+                renderFacility(resultArray)
+            }
+
+            // function handleSearch() {
+            //     var input, filter, table, tr, td, i, txtValue;
+            //     input = document.getElementById("myInput");
+            //     filter = input.value.toUpperCase();
+            //     table = document.getElementById("myTable");
+            //     tr = table.getElementsByTagName("tr");
+            //     for (i = 0; i < tr.length; i++) {
+            //         td = tr[i].getElementsByTagName("td")[1];
+            //         if (td) {
+            //             txtValue = td.textContent || td.innerText;
+            //             if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            //                 tr[i].style.display = "";
+            //             } else {
+            //                 tr[i].style.display = "none";
+            //             }
+            //         }
+            //     }
+            // }
+        </script>
+    </div>
+
+</body>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vn">
+
+<head>
+    <title>
+        Website dành cho trẻ em mác chứng tự kỉ
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+        .bodySection{
+            width: 900px;
+            background-color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        body {
+            background-image: url('./resource/media/3685757.jpg');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .testimonials {
+            padding-top: 7rem;
+            padding-bottom: 7rem;
+        }
+
+        .testimonials .testimonial-item {
+            max-width: 18rem;
+        }
+
+        .testimonials .testimonial-item img {
+            max-width: 12rem;
+            box-shadow: 0px 5px 5px 0px #adb5bd;
+        }
+
+        .featuresContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 80%;
+            padding: 60px 0;
+            gap: 16px;
+        }
+
+        .featureDetail {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            min-height: 248px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        .active {
+            background-color: #4CAF50;
+        }
+
+        .contentContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .paginationContainer {
+            display: flex;
+            justify-content: center;
+            padding-top: 24px;
+            gap: 8px;
+        }
+
+        .contentImage:hover {
+            transform: scale(1.3);
+            transition: ease-in-out 500ms;
+        }
+
+        .contentImageContainer:hover div .contentImage {
+            transform: scale(1.3);
+            transition: ease-in-out 5000ms;
+        }
+
+        .header {
+            color: #0b6bb3 ;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .listParagraph {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .moreImageContainer {
+            height: 180px;
+            width: 276px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .moreImage {
+            height: 100%;
+            min-width: 100%;
+            transition: ease-in-out 500ms;
+        }
+
+        .moreImage:hover {
+            transform: scale(1.2);
+            transition: ease-in-out 500ms;
+        }
+
+        .moreBlogContainer:hover .moreImage {
+            transform: scale(1.2);
+            transition: ease-in-out 500ms;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+            top: 0;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <b></b>
+    </div>
+    <div class="bodySection">
+        <ul>
+            <li><a class="active" href="./kienThucTreTuKy.html">Trang chủ</a></li>
+            <li><a href="./kienThucTreTuKy.html">Kiến thức trẻ tự kỷ</a></li>
+            <li><a href="./chiaSe.html">Chia sẻ</a></li>
+            <li><a href="./game.html">Giải trí</a></li>
+            <li><a href="./CacCoSoCanThiep.html">Cơ sở can thiệp</a></li>
+        </ul>
+        <div 
+            style="
+                padding: 16px;
+                display: flex;
+                flex-direction: column;
+            "
+        >
+            <a href="./kienThucTreTuKy.html">KIẾN THỨC TRẺ TỰ KỶ</a>
+            <div class="header" style="font-size: 1.3rem">Mẹo dân gian chữa bệnh trầm cảm bằng cây thuốc Nam</div>
+            <div style="color: grey; font-size: 0.8rem; margin-bottom: 8px;">POSTED ON 30/07/2022 BY MINH HIỀN NGUYỄN</div>
+            <p>Trầm cảm là một bệnh rối loạn tâm thần phức tạp, khó điều trị và sẽ gây ra nhiều hậu quả khó lường nếu không được điều trị đúng cách, kịp thời. Tuy có thể cải thiện nhanh chóng các triệu chứng nhưng phương pháp sử dụng thuốc Tây y thường đi kèm nhiều tác dụng không mong muốn. Vì vậy, để khắc phục nhược điểm này, nhiều người bệnh đã tìm hiểu và áp dụng các mẹo dân gian chữa bệnh trầm cảm.</p>
+            <div style="display: flex; justify-content: center">
+                <img src="https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram.jpg" width="95%" height="400px" style="object-fit: cover; margin-bottom: 16px;"/>
+            </div>
+            <div class="header">Tại sao nên chữa bệnh trầm cảm bằng mẹo dân gian</div>
+            <div class="listParagraph">
+                <p>Bệnh trầm cảm đặc trưng bởi các triệu chứng: chán nản, lờ đờ, buồn bã, kém tập trung, suy giảm trí nhớ, mất hứng thú với thế giới xung quanh, rối loạn ăn uống, rối loạn giấc ngủ, rối loạn tư duy. bi quan, tiêu cực và một số biểu hiện bất thường khác của hệ thần kinh tự chủ.</p>
+                <p>Nếu không được phát hiện kịp thời và điều trị tích cực, dạng rối loạn tâm lý này có thể dẫn đến nhiều biến chứng nặng nề như: Mất ngủ, đau lưng, nhức đầu, suy nhược cơ thể, suy giảm miễn dịch, giảm miễn dịch. giảm ham muốn, bệnh tim mạch, thậm chí là ung thư.</p>
+                <p>Vì vậy, căn bệnh nguy hiểm này cần được chữa khỏi càng sớm càng tốt. Căn cứ vào mức độ nặng – nhẹ của từng trường hợp mà bác sĩ chuyên khoa sẽ chỉ định các phương pháp điều trị khác nhau. Ngoài các giải pháp điều trị nội khoa, tâm lý trị liệu, áp dụng thuốc đông y, tập thể dục, châm cứu, sốc điện, người bệnh có thể cân nhắc thực hiện một số mẹo dân gian chữa bệnh trầm cảm dưới đây. đây.</p>
+                <p>Phương pháp điều trị này có nhiều ưu điểm vượt trội như: nguyên liệu thảo dược thiên nhiên an toàn, lành tính, sẵn có, dễ kiếm; hương vị thơm ngon, dễ uống; công thức nấu ăn đơn giản; Tiết kiệm chi phí; phát huy tác dụng lâu dài và mang lại kết quả khả quan, không cần người bệnh phải đến bệnh viện thăm khám thường xuyên và ít khi gây tác dụng không mong muốn.</p>
+                <p>Tuy nhiên, trên thực tế, bạn đọc cần thực sự cẩn trọng khi điều trị bệnh theo kinh nghiệm dân gian vì một số bài thuốc Nam chưa được kiểm định độ an toàn. Liều lượng của các loại dược liệu chỉ mang tính chất gần đúng và phỏng đoán.</p>
+                <p>Nhìn chung, 9 bài thuốc dưới đây chỉ góp phần cải thiện triệu chứng chứ không thể điều trị dứt điểm bệnh trầm cảm. Ngoài ra, nếu tự ý điều trị tại nhà mà không hỏi ý kiến ​​bác sĩ, bạn cũng rất dễ bị ngộ độc vì áp dụng sai cách. Ngoài ra, tùy theo cơ địa của mỗi người mà các công thức dân gian này sẽ phát huy tác dụng khác nhau.</p>
+                <p>Vì vậy, người bệnh cần chủ động đi thăm khám tại các bệnh viện chuyên khoa uy tín và được lương y / bác sĩ tư vấn kỹ càng trước khi quyết định điều trị bằng các loại thảo dược thiên nhiên.</p>
+            </div>
+            <div class="header">9 Mẹo dân gian chữa bệnh trầm cảm</div>
+            <div class="listParagraph">
+                <p>Được bào chế từ các loại thảo dược thiên nhiên với những dược tính tuyệt vời, bài thuốc dưới đây sẽ góp phần đẩy lùi các triệu chứng và hỗ trợ quá trình điều trị bệnh một cách an toàn và hiệu quả.</p>
+            </div>
+            <div class="header" style="font-style: italic; font-size: 1.1rem">
+                1. Bí quyết chữa bệnh trầm cảm bằng nghệ
+            </div>
+            <div class="listParagraph">
+                <p>Hoạt chất curcumin từ nghệ có thể nuôi dưỡng các tế bào thần kinh của não, tăng cường sức khỏe tổng thể và kiểm soát các biểu hiện của trầm cảm nhẹ (buồn bã, lo lắng, mệt mỏi, cau có, đau đớn). đau khổ, mất ngủ, thiếu năng lượng, cảm giác tội lỗi, v.v.).</p>
+                <p>Đặc biệt, hai công thức sau đây còn có thể hạn chế nguy cơ mắc bệnh Alzheimer và ngăn ngừa bệnh tim cực kỳ hiệu quả.</p>
+            </div>
+            <div style="display: flex; justify-content: center">
+                <img src="https://tretuky.com/wp-content/uploads/2022/07/meo-dan-gian-chua-benh-tram-1.jpg" width="95%" height="400px" style="object-fit: cover; margin-bottom: 16px;"/>
+            </div>
+            <div class="listParagraph">
+                <div style="font-size: 1.1rem">Cách thực hiện</div>
+                <div style="font-weight: bold">Bài thuốc 1</div>
+                <ul>
+                    <li>Chuẩn bị nước cốt của 1 quả cam, nước ép của 2 quả chanh tươi, 4 thìa cà phê mật ong nguyên chất, 2 thìa cà phê tinh bột nghệ và 4 cốc nước lọc.</li>
+                    <li>Trộn đều tất cả các thành phần</li>
+                    <li>Thưởng thức 1 lần / ngày trong 7 ngày liên tục</li>
+                </ul>
+                <div style="font-weight: bold">Bài thuốc 2</div>
+                <ul>
+                    <li>Chuẩn bị một lượng vừa đủ bột nghệ, 1 thìa bột me, nước cốt của 1 quả chanh, 2 thìa mật ong nguyên chất và 1 ly nước lọc.</li>
+                    <li>Đun sôi bột nghệ trong khoảng 20 phút</li>
+                    <li>Lọc bỏ phần nước trong của dung dịch vừa tạo</li>
+                    <li>Trộn nước nghệ với bột me, nước lọc và mật ong nguyên chất</li>
+                </ul>
+            </div>
+        </div>
+        <div style="display: flex; border-top: 1px lightgrey inset; width: 100%; margin-bottom: 16px;"></div>
+        <div style="margin-left: 16px; font-weight: bold; font-size: 1.2rem">Bài viết liên quan</div>
+        <div style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            place-items: center;
+            padding: 16px;
+            gap: 16px;
+        ">
+            <div class="moreBlogContainer" style="display: flex; gap: 4px; flex-direction: column; justify-content: center;">
+                <div class="moreImageContainer">
+                    <img class="moreImage" src="https://tretuky.com/wp-content/uploads/2022/07/tre-tu-ky-nen-uong-sua-khong.jpg"/>
+                </div>
+                <a href="#" style="text-decoration: none; text-align: center">Trẻ tự kỷ nên uống sữa không, nên uống loại nao</a>
+            </div>
+            <div class="moreBlogContainer"  style="display: flex; gap: 4px; flex-direction: column; justify-content: center;">
+                <div class="moreImageContainer">
+                    <img class="moreImage" src="https://tretuky.com/wp-content/uploads/2022/07/tri-lieu-ngon-ngu-cho-tre-tu-ky-3.jpg"/>
+                </div>
+                <a href="#" style="text-decoration: none; text-align: center">Tìm hiểu phương pháp trị liệu ngôn ngữ cho trẻ tự kỷ</a>
+            </div>
+            <div class="moreBlogContainer"  style="display: flex; gap: 4px; flex-direction: column; justify-content: center;">
+                <div class="moreImageContainer">
+                    <img class="moreImage" src="https://tretuky.com/wp-content/uploads/2022/07/cay-ghep-te-bao-goc-co-chua-duoc-tu-ky-3.jpg"/>
+                </div>
+                <a href="#" style="text-decoration: none; text-align: center">Tìm hiểu phương pháp chữa tự kỷ bằng tế bào gốc</a>
+            </div>
+            <div class="moreBlogContainer"  style="display: flex; gap: 4px; flex-direction: column; justify-content: center;">
+                <div class="moreImageContainer">
+                    <img class="moreImage" src="https://tretuky.com/wp-content/uploads/2022/07/tu-ky-va-hoi-chung-biet-doc-truoc-tuoi-o-tre.jpg"/>
+                </div>
+                <a href="#" style="text-decoration: none; text-align: center">Rối loạn ngôn ngữ giao tiếp ở trẻ và những điều cần biết</a>
+            </div>
+            <div class="moreBlogContainer"  style="display: flex; gap: 4px; flex-direction: column; justify-content: center;">
+                <div class="moreImageContainer">
+                    <img class="moreImage" src="https://tretuky.com/wp-content/uploads/2022/07/tre-tu-ky-nen-uong-sua-khong.jpg"/>
+                </div>
+                <a href="#" style="text-decoration: none; text-align: center">Mối liên hệ giữa tự kỷ và hội chứng biết đọc trước tuổi ở trẻ</a>
+            </div>
+            <div class="moreBlogContainer"  style="display: flex; gap: 4px; flex-direction: column; justify-content: center;">
+                <div class="moreImageContainer">
+                    <img class="moreImage" src="https://tretuky.com/wp-content/uploads/2022/07/dau-hieu-nhan-biet-som-tre-so-sinh-bi-tu-ky-1.jpg"/>
+                </div>
+                <a href="#" style="text-decoration: none; text-align: center">Dấu hiệu nhận biết sớm trẻ sơ sinh bị tự kỷ</a>
+            </div>
+        </div>
+    </div>
+
+    <script> </script>
+</body>

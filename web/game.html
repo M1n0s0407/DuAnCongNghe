@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url('./resource/media/3685757.jpg');
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-image: url('./resource/media/3685757.jpg');
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="container" style="opacity:0;">
+        <div id="game" class="fs">
+            <div id="hintBtn">Hint</div>
+            <div class="foundTxt"></div>
+            <div class="timeTxt">30:00</div>
+            <div class="timePlus">+3 sec</div>
+
+            <div id="btnArea">
+                <div id="b1" class="btn"></div>
+            </div>
+
+            <div class="end">
+                <div class="endTxt"></div>
+                <div id="replayBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+                        <rect width="240" height="240" fill="none" />
+                        <path fill="#fff"
+                            d="M120,50V10L70,60l50,50V70c33.11,0,60,26.9,60,60c0,33.11-26.89,60-60,60c-33.1,0-60-26.89-60-60H40 c0,44.2,35.8,80,80,80s80-35.8,80-80S164.2,50,120,50z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 12px; margin-top: 26px;">
+        <a 
+            href="index.html" 
+            style="
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 1.7rem;
+                border-radius: 8px;
+                border: solid 2px aliceblue;
+                padding: 8px;
+            "
+        >
+            Trang chủ
+        </a>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
